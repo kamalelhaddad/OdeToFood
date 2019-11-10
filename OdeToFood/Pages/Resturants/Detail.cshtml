@@ -1,0 +1,23 @@
+﻿@page "{resturantId:int}"
+@model OdeToFood.Pages.Resturants.DetailModel
+@{
+    ViewData["Title"] = "Detail";
+}
+
+@if (Model.Resturant != null) {
+    <h2 class="panel-heading panel">@Model.Resturant.Name</h2>
+    <div>
+        Id : @Model.Resturant.Id
+    </div>
+    <div>
+        Location : @Model.Resturant.Location
+    </div>
+    <div>
+        Cuisine : @Model.Resturant.Cuisine
+    </div>
+}
+else {
+    ViewData["Title"] = "Not Found";
+    <h2 class="alert alert-danger">Resturant Not Found exception!</h2>
+}
+<a asp-page="./List" class="btn btn-link">All Resturants</a>
