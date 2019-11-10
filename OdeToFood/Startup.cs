@@ -27,7 +27,7 @@ namespace OdeToFood {
                 options.UseSqlServer(Configuration.GetConnectionString("OdeToFoodDb"));
             });
             // inMemory dev
-            services.AddSingleton<IResturantData, InMemoryResturantData>();
+            services.AddSingleton<IRestaurantData, InMemoryRestaurantData>();
             services.Configure<CookiePolicyOptions>(options => {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;

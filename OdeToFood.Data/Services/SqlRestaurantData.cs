@@ -12,7 +12,7 @@ namespace OdeToFood.Data {
         public SqlRestaurantData(OdeToFoodDbContext dbContext) {
             _dbContext = dbContext;
         }
-        public IEnumerable<Restaurant> GetResturantsByName(string name) {
+        public IEnumerable<Restaurant> GetRestaurantsByName(string name) {
             var query = _dbContext.Restaurants.Where(r => r.Name.StartsWith(name) || string.IsNullOrEmpty(name)).OrderBy(r => r.Name);
             return query;
         }
